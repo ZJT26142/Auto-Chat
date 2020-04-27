@@ -6,7 +6,8 @@ const app = express();
 
 app.use(express.static('public'));
 
-app.listen(3000, ()=>console.log("app is running at port 3000"));
+const port = process.env.PORT || 3000;
+app.listen(port, ()=>console.log(`app is running at port ${port}`));
 
 app.get('/reply/:keyword', async(req, res)=>{
     const encoded_keyword = encodeURI(req.params.keyword);
