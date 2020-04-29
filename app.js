@@ -16,3 +16,8 @@ app.get('/reply/:keyword', async(req, res)=>{
     const json = await api_res.json();
     res.json(json.content);
 });
+
+app.get("/", (request, response) => {
+    response.sendFile(__dirname + "/public/index.html");
+  });
+  
